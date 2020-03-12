@@ -17,7 +17,7 @@ static int			check_wid_prec(const char *str, int *i, va_list factors, t_flags *f
 		res = va_arg(factors, int);
 		if (res < 0 && str[*i-1] == '.')
 			flags->dot = 0;
-		if (res < 0)
+		if (res < 0 && str[*i-1] != '.')
 		{
 			res = res * -1;
 			flags->minus = 1;
