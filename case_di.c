@@ -73,7 +73,7 @@ static int				di_width(t_flags flags, int num)
 	return (res);
 }
 
-static int				di_prewidth(t_flags flags, int num, int len)
+/*static int				di_prewidth(t_flags flags, int num, int len)
 {
 	int		res;
 	int		pre;
@@ -85,20 +85,49 @@ static int				di_prewidth(t_flags flags, int num, int len)
 	res = pre + wid + len;
 	if (num == 0)
 		wid += 1;
+	//if (num == 0 && pre != 0)
+    //    res -= 1;
 	while (flags.minus == 0 && wid-- > 0)
 		write(1, " ", 1);
 	if (num < 0)
 		write(1, "-", 1);
 	while (pre-- > 0)
 		write(1, "0", 1);
-	if (!(num == 0))
+	if (num != 0)
 		ft_putnbr(num);
 	while (flags.minus == 1 && wid-- > 0)
-		write(1, " ", 1);
+	    write(1, " ", 1);
 	return (res);
+}*/
+
+static int				di_prewidth(t_flags flags, int num, int len)
+{
+    int res;
+    int pre;
+    int wid;
+
+    pre = num >= 0 ? flags.precision - len : flags.precision - (len - 1);
+    pre = flags.precision - len >= 0 ? pre : 0;
+    wid = flags.width - (len + pre) > 0 ? flags.width - (len + pre) : 0;
+    res = pre + wid + len;
+    if (num == 0 && flags.precision == 0 && flags.dot != 0)
+        wid += 1;
+    //if (num == 0 && pre != 0)
+    //    res -= 1;
+    while (flags.minus == 0 && wid-- > 0)
+        write(1, " ", 1);
+    if (num < 0)
+        write(1, "-", 1);
+    while (pre-- > 0)
+        write(1, "0", 1);
+    if (!(num == 0 && flags.precision == 0 && flags.dot != 0))
+        ft_putnbr(num);
+    while (flags.minus == 1 && wid-- > 0)
+        write(1, " ", 1);
+    return (res);
 }
 
-int						print_case_di(va_list factor, t_flags flags)
+    int						print_case_di(va_list factor, t_flags flags)
 {
 	int		num;
 	int		res;

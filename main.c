@@ -4,7 +4,26 @@ int main(void)
 {   
     int a = 10 ;
 	int *p = &a ;
-    int d = 13;
+    int d = 0;
+
+    printf("%d", ft_printf("|%-4.d|\n", d));
+    printf("\n");
+    printf("%d", printf("|%-4.d|\n", d));
+
+    printf("\n");
+    printf("\n");
+
+    printf("%d", ft_printf("|%-4.4d|\n", d));
+    printf("\n");
+    printf("%d", printf("|%-4.4d|\n", d));
+
+
+
+    //printf("%d", ft_printf("-->|%-4.x|<--\n", -11));
+    //printf("\n");
+    //printf("%d", printf("-->|%-4.x|<--\n", -11));
+
+
 
 	//ft_printf("d - check zero:[%06d] \t i:[%06i]\n", 28, -70);
 	//ft_printf("u-pos:[%u]\n", 445);
@@ -16,17 +35,14 @@ int main(void)
 	//ft_printf("[%-*c]\n", 15, '5');
 	//ft_printf("ft proc - check star: [%*%]\n", 3);
 	//ft_printf("my proc: [%%b]\n");
-    printf("%d", ft_printf("-->|%*.*d|<--\n", -4, -3, d));
+
 
     //printf("\n");
     //ft_printf("%-*.2s> hello >%4.6d\n", 10, "Hello", 5);
-
-    printf("\n");
-
     //printf("%-*.2s> hello >%4.6d\n", 10, "Hello", 5);
     //printf("\n");
 
-    printf("%d", printf("-->|%*.*d|<--\n", -4, -3, d));
+
     //printf("d - check zero:[%06d] \t i:[%06i]\n", 28, -70);
 	//printf("u-pos:[%u]\n", 445);
 	//printf("u-neg:[%u]\n", -445);

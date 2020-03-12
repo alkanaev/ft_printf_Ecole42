@@ -59,7 +59,7 @@ int				print_case_s(va_list factor, t_flags flags)
 	}
 	if (flags.width > 0 && flags.minus == 0)
 		res = s_width(flags, size_s);
-	i += s_precision(flags, s);
+	i = s_precision(flags, s);
 	if (flags.minus == 1)
 		res = s_width(flags, size_s);
 	return (i + res);

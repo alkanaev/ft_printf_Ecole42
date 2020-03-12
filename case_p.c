@@ -32,7 +32,7 @@ static int				p_precision(t_flags flags, unsigned long num)
 	write(1, "0x", 2);
 	while (to_print-- > 0)
 		write(1, "0", 1);
-	ft_print_lhex(num);
+	ft_print_lhex_p(num);
 	return (res);
 }
 
@@ -52,7 +52,7 @@ static int				p_width(t_flags flags, unsigned long num)
 	while (flags.minus == 0 && to_print-- > 0)
 		write(1, &width_char, 1);
 	write(1, "0x", 2);
-	ft_print_lhex(num);
+	ft_print_lhex_p(num);
 	while (flags.minus == 1 && to_print-- > 0)
 		write(1, &width_char, 1);
 	if (flags.width < len)
@@ -78,7 +78,7 @@ static int				p_wid_pr(t_flags flags, unsigned long num, int len)
 	while (pre-- > 0)
 		write(1, "0", 1);
 	if (!(flags.precision == 0 && num == 0))
-		ft_print_lhex(num);
+		ft_print_lhex_p(num);
 	while (flags.minus == 1 && wid-- > 0)
 		write(1, " ", 1);
 	return (res);
@@ -100,7 +100,7 @@ int						print_case_p(va_list factor, t_flags flags)
 	else
 	{
 		write(1, "0x", 2);
-		ft_print_lhex(num);
+		ft_print_lhex_p(num);
 		return (cnt_hex_p(num));
 	}
 	return (res);
