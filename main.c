@@ -4,20 +4,10 @@ int main(void)
 {   
     int a = 10 ;
 	int *p = &a ;
-    int d = 0;
 
-    printf("%d", ft_printf("|%-4.d|\n", d));
+    printf("%d", ft_printf("{%-.12u}\n", -20000000));
     printf("\n");
-    printf("%d", printf("|%-4.d|\n", d));
-
-    printf("\n");
-    printf("\n");
-
-    printf("%d", ft_printf("|%-4.4d|\n", d));
-    printf("\n");
-    printf("%d", printf("|%-4.4d|\n", d));
-
-
+    printf("%d", printf("{%-.12u}\n", -20000000));
 
     //printf("%d", ft_printf("-->|%-4.x|<--\n", -11));
     //printf("\n");

@@ -30,7 +30,7 @@ void			ft_print_uhex(unsigned int num)
 	write(1, &hexa_base[num % 16], 1);
 }
 
-int cnt_lu_hex(unsigned long num)
+int cnt_lu_hex(unsigned int num)
 {
 	int	h;
 

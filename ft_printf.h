@@ -30,7 +30,7 @@ int					print_case_p(va_list factor, t_flags flags);
 int					ft_strlen(char *s);
 void				ft_putnbr(long num);
 void				ft_putnbr_u(unsigned int num);
-int 				cnt_lu_hex(unsigned long num);
+int 				cnt_lu_hex(unsigned int num);
 void				ft_print_lhex_p(unsigned long num);
 void				ft_print_lhex(unsigned int num);
 void				ft_print_uhex(unsigned int num);

@@ -14,6 +14,7 @@ add_executable(ft_printf_detailed
         case_u.c
         case_uhex.c
         cnt_hex_lup.c
+        conversion.c
         ft_printf.c
         ft_printf.h
         ft_putnbr.c
