@@ -15,25 +15,30 @@ static unsigned int		len_num(unsigned int num)
 
 static int				u_precision(t_flags flags, int num)
 {
-	int		len;
-	int		res;
+	int		reslen;
 	int		to_print;
 
-	len = len_num(num);
-	to_print = num > 0 ? flags.precision - len : flags.precision - (len - 1);
+	reslen = len_num(num);
+	to_print = num > 0 ? flags.precision - reslen : flags.precision - (reslen - 1);
 	if (num == 0)
-		len = 0;
-	res = len;
+		reslen = 0;
 	if (flags.precision == 0 && num == 0)
 		return (0);
-	while (to_print-- > 0)
-	{
-		res++;
-		write(1, "0", 1);
-	}
+	if (num < 0)
+        while (to_print-- > 1)
+        {
+            reslen++;
+            write(1, "0", 1);
+        }
+    else
+        while (to_print-- > 0)
+        {
+            reslen++;
+            write(1, "0", 1);
+        }
 	if (!(num == 0))
 		ft_putnbr_u(num);
-	return (res);
+	return (reslen);
 }
 
 static int				u_width(t_flags flags, int num)

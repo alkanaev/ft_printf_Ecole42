@@ -5,9 +5,9 @@ int main(void)
     int a = 10 ;
 	int *p = &a ;
 
-    printf("%d", ft_printf("{%-.12u}\n", -20000000));
+    printf("%d", ft_printf("{%-.12u}\n", -20));
     printf("\n");
-    printf("%d", printf("{%-.12u}\n", -20000000));
+    printf("%d", printf("{%-.12u}\n", -20));
 
     //printf("%d", ft_printf("-->|%-4.x|<--\n", -11));
     //printf("\n");
