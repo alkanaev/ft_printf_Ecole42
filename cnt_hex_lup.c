@@ -6,7 +6,7 @@ void			ft_print_lhex_p(unsigned long num)
 
 	hexa_base = "0123456789abcdef";
 	if (num >= 16)
-		ft_print_lhex(num / 16);
+		ft_print_lhex_p(num / 16);
 	write(1, &hexa_base[num % 16], 1);
 }
 

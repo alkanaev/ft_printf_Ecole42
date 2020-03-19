@@ -3,11 +3,27 @@
 int main(void)
 {   
     int a = 10 ;
-	int *p = &a ;
+    int *p = &a ;
 
-    printf("%d", ft_printf("{%-.12u}\n", -20));
-    printf("\n");
-    printf("%d", printf("{%-.12u}\n", -20));
+
+
+        printf("-->|%p|<--\n", p);
+        ft_printf("-->|%p|<--\n", p);
+
+        printf("-->|%-16.p|<--\n", p);
+        ft_printf("-->|%-16.p|<--\n", p);
+        printf("-->|%-16p|<--\n", p);
+        ft_printf("-->|%-16p|<--\n", p);
+        printf("-->|%-15.p|<--\n", p);
+        ft_printf("-->|%-15.p|<--\n", p);
+        printf("-->|%-15p|<--\n", p);
+        ft_printf("-->|%-15p|<--\n", p);
+        printf("-->|%-14.p|<--\n", p);
+        ft_printf("-->|%-14.p|<--\n", p);
+
+    //printf("%d", ft_printf("{%-.12u}\n", -20));
+    //printf("\n");
+    //printf("%d", printf("{%-.12u}\n", -20));
 
     //printf("%d", ft_printf("-->|%-4.x|<--\n", -11));
     //printf("\n");
