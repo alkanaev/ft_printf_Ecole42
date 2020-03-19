@@ -19,23 +19,16 @@ static int				u_precision(t_flags flags, int num)
 	int		to_print;
 
 	reslen = len_num(num);
-	to_print = num > 0 ? flags.precision - reslen : flags.precision - (reslen - 1);
+	to_print = num != 0 ? flags.precision - reslen : flags.precision - (reslen - 1);
 	if (num == 0)
 		reslen = 0;
 	if (flags.precision == 0 && num == 0)
 		return (0);
-	if (num < 0)
-        while (to_print-- > 1)
-        {
-            reslen++;
-            write(1, "0", 1);
-        }
-    else
-        while (to_print-- > 0)
-        {
-            reslen++;
-            write(1, "0", 1);
-        }
+    while (to_print-- > 0)
+    {
+        reslen++;
+        write(1, "0", 1);
+    }
 	if (!(num == 0))
 		ft_putnbr_u(num);
 	return (reslen);
